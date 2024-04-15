@@ -1,0 +1,32 @@
+{
+  "name": "pro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node-dev --respawn --transpile-only main.ts",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "migration:run": "npm run typeorm -- migration:run",
+    "migration:revert": "npm run typeorm -- migration:revert",
+    "generate:migration": "npm run typeorm -- migration:generate -n AutoMigration",
+    "migration:generate": "npm run typeorm -- migration:generate -n AddContinent -d src/db/data-source"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.10.2",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "type-graphql": "^2.0.0-beta.6",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "ts-node-dev": "2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
